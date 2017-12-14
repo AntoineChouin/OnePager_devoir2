@@ -14,11 +14,13 @@ body {
   align-content: space-around;
   align-items: center;
   justify-content: space-between;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
+  background-color: rgba(9, 105, 162, 0.5);
 }
 
 .container article {
-  margin: 1% 5%;
+  margin: 5% 0 !important;
+  background-color: rgba(255, 187, 0, 0.5);
 }
 
 .container img {
@@ -27,36 +29,31 @@ body {
 }
 
 .container h1 {
-  color: #FFBB00;
   font-size: 300%;
 }
 
 .post {
-  width: 100vw;
-  height: 100vh;
+  margin: 4em 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-flow: column wrap;
-  background: url("http://www.owensliquors.com/userfiles/Image/background.jpg") top left/cover no-repeat fixed padding-box border-box #FFBB00;
-  /* color */
+  border: 3px solid blue;
+  background-color: red;
 }
 
 .post header {
+  align-self: stretch;
   text-align: center;
-  background-color: rgba(22, 222, 222, 0.4);
+  flex: 0 1 auto;
 }
 
 .post-text {
   text-align: center;
-  background-color: rgba(222, 222, 222, 0.7);
 }
 
 .post p {
   line-height: 200%;
   margin: 0.4% 0;
   align-self: center;
-}
-
-.post h1 {
-  text-align: center;
 }

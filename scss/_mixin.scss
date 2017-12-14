@@ -5,12 +5,10 @@
 
 // retrieve background from $colors map ie. `color(primary, base)`
 // @function color($backImages, $color-variant) {
-   
 //     @return (map-get($colors, $color-variant);
 // }
-
-@mixin back($image) {
-    background: url($image)
+@mixin back($image, $choix) {
+    background: url(map-get($backImages), $image)
     /* image */
     top left / cover
     /* position / size */

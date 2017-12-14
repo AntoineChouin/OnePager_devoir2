@@ -1,0 +1,86 @@
+@import "mixin";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+$lightgreen: lightseagreen;
+$lightblue:#aa33aa;
+$backImages: ( glass: "https://t3.ftcdn.net/jpg/01/44/24/68/240_F_144246897_hqSUeaUkZx5cECdFILhetg9Rqvr8MPWt.jpg", glassAlone: "https://thumbs.dreamstime.com/t/glass-whiskey-bourbon-scotch-ice-close-up-cubes-old-rustic-wooden-table-43418947.jpg", wooden: "http://www.owensliquors.com/userfiles/Image/background.jpg", threeBarrel: "https://t3.ftcdn.net/jpg/01/04/20/18/240_F_104201889_akJ4gafyCdIkgvAy7ZGxbtxXoPkcBryb.jpg", barrel: "http://grythyttanwhisky.se/wp-content/uploads/sites/273/2017/05/iStock-519687936.jpg", darkWood: "https://n6-img-fp.akamaized.net/free-photo/plank-wood-wall-for-text-and-background_1249-335.jpg?size=338&ext=jpg", laque: "http://www.lifetimewarrantyfence.com/wp-content/uploads/2015/01/wood-_texture553.jpg", darklaque: "https://static1.squarespace.com/static/56c1f5d501dbae6f070951c2/t/56eb0000f699bbf1a202d01f/1458241538010/bwood.jpg?format=1500w");
+// retrieve color from $colors map ie. `color(primary, base)`
+
+
+// color variable map
+$colors: ( // nested map inception
+primary: ( base: #FFBB00, light: lighten(#FFBB00, 15%), dark: darken(#FFBB00, 15%), trans: transparentize(#FFBB00, 0.5)), // and another. is the totem still spinning?
+secondary: ( base: #0969A2, light: lighten(#0969A2, 15%), dark: darken(#0969A2, 15%), trans: transparentize(#0969A2, 0.5)));
+$wiskey1: "http://www.owensliquors.com/userfiles/Image/background.jpg";
+@mixin back($image) {
+    background: url($image)
+    /* image */
+    top left / cover
+    /* position / size */
+    no-repeat
+    /* repeat */
+    fixed
+    /* attachment */
+    padding-box
+    /* origin */
+    border-box
+    /* clip */
+    color(primary, base);
+    
+    /* color */
+}
+
+body {
+    width: 100vw; // background-image: $wiskeyGlassGauche;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-content: space-around;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap; // background-color: #ab4333;
+    article {
+        // width: 90%;
+        margin: 1% 5%;
+    }
+    img {
+        max-width: 25vw;
+        max-height: 25vh;
+    }
+    h1 {
+        color: color(primary, base);
+        font-size: 300%;
+    }
+}
+
+.post {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap; // background-color: lightseagreen;
+    // @include back("http://www.owensliquors.com/userfiles/Image/background.jpg");
+    @include back(map-get($backImages,glass);
+    header {
+        text-align: center;
+        background-color: rgba(22, 222, 222, 0.4);
+    }
+    &-text {
+        text-align: center;
+        background-color: rgba(222, 222, 222, 0.7);
+    }
+    p {
+        line-height: 200%;
+        margin: 0.4% 0;
+        align-self: center;
+    }
+    h1 {
+        text-align: center;
+    }
+}

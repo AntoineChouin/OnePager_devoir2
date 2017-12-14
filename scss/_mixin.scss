@@ -1,0 +1,28 @@
+@function color($color-name, $color-variant) {
+    // map inception
+    @return map-get(map-get($colors, $color-name), $color-variant);
+}
+
+// retrieve background from $colors map ie. `color(primary, base)`
+// @function color($backImages, $color-variant) {
+   
+//     @return (map-get($colors, $color-variant);
+// }
+
+@mixin back($image) {
+    background: url($image)
+    /* image */
+    top left / cover
+    /* position / size */
+    no-repeat
+    /* repeat */
+    fixed
+    /* attachment */
+    padding-box
+    /* origin */
+    border-box
+    /* clip */
+    color(primary, base);
+    ;
+    /* color */
+}

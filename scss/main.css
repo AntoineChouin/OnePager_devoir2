@@ -10,50 +10,37 @@ body {
 }
 
 .container {
-  display: flex;
-  align-content: space-around;
-  align-items: center;
-  justify-content: space-between;
-  flex-flow: column wrap;
-  background-color: rgba(9, 105, 162, 0.5);
+  background-color: #fff;
+  color: #444;
 }
 
-.container article {
-  margin: 5% 0 !important;
-  background-color: rgba(255, 187, 0, 0.5);
-}
-
-.container img {
-  max-width: 25vw;
-  max-height: 25vh;
-}
-
-.container h1 {
-  font-size: 300%;
-}
-
-.post {
-  margin: 4em 0;
+.content {
+  grid-area: content;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-flow: column wrap;
-  border: 3px solid blue;
-  background-color: red;
+  flex-flow: wrap column;
 }
 
-.post header {
-  align-self: stretch;
-  text-align: center;
-  flex: 0 1 auto;
+.content header {
+  background-color: blue;
 }
 
-.post-text {
-  text-align: center;
+.header {
+  grid-area: header;
 }
 
-.post p {
-  line-height: 200%;
-  margin: 0.4% 0;
-  align-self: center;
+.footer {
+  grid-area: footer;
+}
+
+.box {
+  background-color: #848484;
+  color: #fff;
+  border-radius: 5px;
+  padding: 50px;
+  font-size: 150%;
+}
+
+.box-content {
+  background-color: #020707;
 }

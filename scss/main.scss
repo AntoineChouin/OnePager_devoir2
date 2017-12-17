@@ -41,34 +41,3 @@ body {
     background-color: #fff;
     color: #444;
 }
-
-.content {
-    grid-area: content;
-    // position: relative;
-    display: flex;
-    justify-content: center;
-    flex-flow: wrap column;
-
-    header{
-        background-color: blue;
-    }
-}
-
-.header {
-    grid-area: header;
-}
-
-.footer {
-    grid-area: footer;
-}
-
-.box {
-    background-color: lighten(#444, 25%);
-    color: #fff;
-    border-radius: 5px;
-    padding: 50px;
-    font-size: 150%;
-    &-content {
-        background-color: darken(#144, 15%);
-    }
-}

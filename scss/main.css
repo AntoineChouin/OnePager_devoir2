@@ -13,34 +13,3 @@ body {
   background-color: #fff;
   color: #444;
 }
-
-.content {
-  grid-area: content;
-  display: flex;
-  justify-content: center;
-  flex-flow: wrap column;
-}
-
-.content header {
-  background-color: blue;
-}
-
-.header {
-  grid-area: header;
-}
-
-.footer {
-  grid-area: footer;
-}
-
-.box {
-  background-color: #848484;
-  color: #fff;
-  border-radius: 5px;
-  padding: 50px;
-  font-size: 150%;
-}
-
-.box-content {
-  background-color: #020707;
-}

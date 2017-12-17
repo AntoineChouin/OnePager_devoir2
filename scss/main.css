@@ -13,3 +13,27 @@ body {
   background-color: #fff;
   color: #444;
 }
+
+.post {
+  border: 2px solid gold;
+}
+
+.post > * {
+  background-color: #8080ff;
+}
+
+.post article {
+  background-color: blue;
+}
+
+.post header {
+  background-color: lightblue;
+}
+
+.post section {
+  background-color: #6666ff;
+}
+
+.post footer {
+  background-color: yellow;
+}

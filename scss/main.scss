@@ -1,6 +1,7 @@
+@charset "UTF-8";
 @import "vendor/vendor";
 @import "mixin";
-@import "../node_modules/materialize-css/sass/materialize";
+// @import "../node_modules/materialize-css/sass/materialize";
 // @import "variables";
 * {
     margin: 0;
@@ -12,11 +13,8 @@ $lightgreen: lightseagreen;
 $lightblue:#aa33aa;
 // retrieve color from $colors map ie. `color(primary, base)`
 // color variable map
-$colors: ( // nested map inception
-primary: ( base: #FFBB00, light: lighten(#FFBB00, 15%), dark: darken(#FFBB00, 15%), trans: transparentize(#FFBB00, 0.5)), // and another. is the totem still spinning?
-secondary: ( base: #0969A2, light: lighten(#0969A2, 15%), dark: darken(#0969A2, 15%), trans: transparentize(#0969A2, 0.5)));
 $wiskey1: "http://www.owensliquors.com/userfiles/Image/background.jpg";
-@mixin back($image) {
+@mixin backImage($image) {
     background: url($image)
     /* image */
     top left / cover
@@ -34,32 +32,29 @@ $wiskey1: "http://www.owensliquors.com/userfiles/Image/background.jpg";
 }
 
 @mixin backColor ($colorBkg) {
-    >* {
-        background-color: mix($colorBkg, white);
-    }
     article {
-        background-color: $colorBkg;
+        background-color: transparentize( mix($colorBkg, orangered), 0.25);
     }
     header {
-        background-color: lightblue;
+        background-color: transparentize( mix($colorBkg, limegreen), 0.25);
     }
     section {
-        background-color: saturation(lighten($colorBkg, 20%));
+        background-color: transparentize(complement(lighten($colorBkg, 20%)), 0.25);
     }
     footer {
-        background-color: complement($colorBkg);
+        background-color: transparentize(complement($colorBkg), 0.25);
     }
     aside {
         background-color: darken(transparentize($colorBkg, 0.2), 20%);
-    }
-    footer {
-        background-color: complement(darken(adjust-hue($colorBkg, 20%), 10%));
-    }
+    } // footer {
+    //     background-color: complement(darken(adjust-hue($colorBkg, 20%), 10%));
+    // }
 }
 
+html,
 body {
-    width: 100vw;
-    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
 }
 
 h2 {
@@ -71,31 +66,46 @@ h3 {
 }
 
 .container {
-    max-width: 100vw;
-    max-height: 100vw;
-    margin: 0 auto;
-  
-    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-content: space-between;
     color: #444;
+    @include backColor(#afa385) @include backImage($wiskey1);
 }
 
 .post {
-    @include backColor(#0fa);
-    @extend .col;
+    // width: calc(100% * 0.90);
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center; // flex-flow: column wrap;
+    align-content: center;
+    align-self: stretch;
+    flex-flow: wrap row;
     border: 2px solid gold;
     color: black;
+    margin: 2.5% 5%;
     .item {
         text-decoration: underline;
     }
-    header {
-        flex: 1 0;
+    header{
+        max-width: 100%;
+        flex: 1 2 100%;
+    }
+    article, aside{
+        flex: 1 1;
+    }
+    footer{
+        display: none;
+    }
+    p{
+        line-height: 200%;
     }
 }
 
 .message {
     color: darken(burlywood, 20%);
     background-color: #aa33aa;
-    
 }
 
 i.fa {

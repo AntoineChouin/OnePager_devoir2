@@ -7,6 +7,9 @@
 // @function color($backImages, $color-variant) {
 //     @return (map-get($colors, $color-variant);
 // }
+$colors: ( // nested map inception
+primary: ( base: #FFBB00, light: lighten(#FFBB00, 15%), dark: darken(#FFBB00, 15%), trans: transparentize(#FFBB00, 0.5)), // and another. is the totem still spinning?
+secondary: ( base: #0969A2, light: lighten(#0969A2, 15%), dark: darken(#0969A2, 15%), trans: transparentize(#0969A2, 0.5)));
 @mixin back($image, $choix) {
     background: url(map-get($backImages), $image)
     /* image */

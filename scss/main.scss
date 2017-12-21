@@ -1,13 +1,21 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Gabriela|Neuton');
 @import "vendor/vendor";
 @import "mixin";
-// @import "../node_modules/materialize-css/sass/materialize";
-// @import "variables";
+$font-Abril: 'Abril Fatface',
+cursive;
+$font-neuton: 'Neuton',
+serif;
+$font-gabriela: 'Gabriela',
+serif;
+@import "../node_modules/baseguide/scss/baseguide";
 * {
     margin: 0;
     padding: 0;
     box-sizing: content-box;
+    overflow: visible;
 }
+
 
 $lightgreen: lightseagreen;
 $lightblue:#aa33aa;
@@ -44,6 +52,9 @@ $wiskey1: "http://www.owensliquors.com/userfiles/Image/background.jpg";
     footer {
         background-color: transparentize(complement($colorBkg), 0.25);
     }
+    >div {
+        background-color: transparentize(saturate($color: $colorBkg, $amount: 25%), 0.25)
+    }
     aside {
         background-color: darken(transparentize($colorBkg, 0.2), 20%);
     } // footer {
@@ -55,6 +66,7 @@ html,
 body {
     max-width: 100vw;
     max-height: 100vh;
+       @include backImage($wiskey1);
 }
 
 h2 {
@@ -68,39 +80,53 @@ h3 {
 .container {
     display: flex;
     justify-content: center;
-    flex-flow: column wrap;
-    align-content: space-between;
+    // align-content: space-evenly;
+    // flex-flow: column wrap !important;
+    // align-content: space-between;
     color: #444;
-    @include backColor(#afa385) @include backImage($wiskey1);
+    font-family: $font-Abril; // @include backColor(#afa385);
+ 
+    
 }
 
 .post {
-    // width: calc(100% * 0.90);
-    flex: 1 1 100%;
-    display: flex;
-    justify-content: center; // flex-flow: column wrap;
-    align-content: center;
-    align-self: stretch;
-    flex-flow: wrap row;
+    @include backColor(#afa385); 
+//   @include column(90%);
+
     border: 2px solid gold;
-    color: black;
-    margin: 2.5% 5%;
+    color: black; // margin: 2.5% 5%;
+    margin-bottom: get-gutter();
+    @include mq(md) {
+        margin-bottom: get-gutter(md);
+    }
     .item {
         text-decoration: underline;
     }
-    header{
+    header {
         max-width: 100%;
         flex: 1 2 100%;
     }
-    article, aside{
+    article,
+    aside {
         flex: 1 1;
     }
-    footer{
+    footer {
         display: none;
     }
-    p{
+    p {
         line-height: 200%;
     }
+    .post-image {
+        // max-width: 25%;
+        // max-height: 25%;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            border: 5%;
+            background-color: #aa33aa;
+        }
+    }
+
 }
 
 .message {

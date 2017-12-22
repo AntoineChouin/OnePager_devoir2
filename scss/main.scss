@@ -4,8 +4,7 @@
 @import "vendor/vendor";
 @import "vendor/normalize/_normalize";
 @import "vendor/vendor";
-@import "variables";
-@import "mixin";
+@import "base/_base.scss";
 @import "../node_modules/bootstrap/scss/bootstrap-grid";
 * {
     margin: 0;

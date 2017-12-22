@@ -9,10 +9,11 @@
 * {
     margin: 0;
     padding: 0;
-    border: 0; // box-sizing: content-box;
-    // overflow: scroll;
+    border: 0;
 }
-
+%flexpost{
+    width: 50%;
+}
 $colors:#e60926,
 #2bacf7,
 #f72b46,
@@ -104,7 +105,9 @@ body {
 .post-logo {
     max-width: 100%;
     max-height: 100%;
-    .post-img {
+    width: 100%;
+    height: 100%;
+    .post-logo_img {
         border-radius: 10px;
     }
 }
@@ -121,25 +124,55 @@ body {
         flex-flow: column wrap;
         .post-title {
             flex: 0 1 10%;
-           
-            border-bottom: 1px solid blue;
-            // background-color: green;
+            border-bottom: 1px solid blue; // background-color: green;
         }
         .post-info {
-            // flex: 1 1 50%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-                .post-img,
-            .list-brassin_item {
-                flex: 0 1 50%;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-flow: wrap row;
+            flex: 1 1 auto;
+        }
+        .post-logo{
+              @extend %flexpost;
+              border-radius: 40%;
+        }
+        .list-brassin{
+            @extend %flexpost;
+            color: black;
+           
+            h4{
+                font-size: 1.4em;
+            }
+            &_item{
+                padding: 0.4em;
             }
         }
         @include media-breakpoint-up(sm) {
-            @include make-col(12);
+            @include make-col(12); 
+            .post-info{
+                flex-flow: wrap column;
+            }
         }
         @include media-breakpoint-up(lg) {
             @include make-col(12);
+            &:nth-child(odd) {
+                .post-logo {
+                    order: 2;
+                }
+                .list-brassin {
+                    order: 4;
+                }
+               
+            }
+             &:nth-child(even) {
+                 .post-img {
+                     order: 4;
+                 }
+                 .list-brassin {
+                     order: 2;
+                 }
+             }
         }
     }
 }

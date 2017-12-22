@@ -14627,6 +14627,10 @@ html {
   border: 0;
 }
 
+.posts .post .post-logo, .posts .post .list-brassin {
+  width: 50%;
+}
+
 html,
 body {
   max-height: 100vh;
@@ -14684,9 +14688,11 @@ body {
 .post-logo {
   max-width: 100%;
   max-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-.post-logo .post-img {
+.post-logo .post-logo_img {
   border-radius: 10px;
 }
 
@@ -14719,13 +14725,26 @@ body {
 
 .posts .post .post-info {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-flow: wrap row;
+  flex: 1 1 auto;
 }
 
-.posts .post .post-info .post-img,
-.posts .post .post-info .list-brassin_item {
-  flex: 0 1 50%;
+.posts .post .post-logo {
+  border-radius: 40%;
+}
+
+.posts .post .list-brassin {
+  color: black;
+}
+
+.posts .post .list-brassin h4 {
+  font-size: 1.4em;
+}
+
+.posts .post .list-brassin_item {
+  padding: 0.4em;
 }
 
 @media (min-width: 576px) {
@@ -14733,11 +14752,26 @@ body {
     flex: 0 0 100%;
     max-width: 100%;
   }
+  .posts .post .post-info {
+    flex-flow: wrap column;
+  }
 }
 
 @media (min-width: 992px) {
   .posts .post {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+  .posts .post:nth-child(odd) .post-logo {
+    order: 2;
+  }
+  .posts .post:nth-child(odd) .list-brassin {
+    order: 4;
+  }
+  .posts .post:nth-child(even) .post-img {
+    order: 4;
+  }
+  .posts .post:nth-child(even) .list-brassin {
+    order: 2;
   }
 }

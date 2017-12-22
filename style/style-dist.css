@@ -15229,6 +15229,10 @@ html {
   border: 0;
 }
 
+.posts .post .post-logo, .posts .post .list-brassin {
+  width: 50%;
+}
+
 html,
 body {
   max-height: 100vh;
@@ -15286,9 +15290,11 @@ body {
 .post-logo {
   max-width: 100%;
   max-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-.post-logo .post-img {
+.post-logo .post-logo_img {
   border-radius: 10px;
 }
 
@@ -15333,19 +15339,34 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
-.posts .post .post-info .post-img,
-.posts .post .post-info .list-brassin_item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 50%;
-          flex: 0 1 50%;
+.posts .post .post-logo {
+  border-radius: 40%;
+}
+
+.posts .post .list-brassin {
+  color: black;
+}
+
+.posts .post .list-brassin h4 {
+  font-size: 1.4em;
+}
+
+.posts .post .list-brassin_item {
+  padding: 0.4em;
 }
 
 @media (min-width: 576px) {
@@ -15355,6 +15376,12 @@ body {
             flex: 0 0 100%;
     max-width: 100%;
   }
+  .posts .post .post-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: wrap column;
+            flex-flow: wrap column;
+  }
 }
 
 @media (min-width: 992px) {
@@ -15363,5 +15390,25 @@ body {
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
     max-width: 100%;
+  }
+  .posts .post:nth-child(odd) .post-logo {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .posts .post:nth-child(odd) .list-brassin {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  .posts .post:nth-child(even) .post-img {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  .posts .post:nth-child(even) .list-brassin {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }

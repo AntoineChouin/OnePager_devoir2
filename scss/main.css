@@ -14181,7 +14181,7 @@ html {
   justify-content: flex-end !important;
 }
 
-.justify-content-center, .posts .post {
+.justify-content-center {
   justify-content: center !important;
 }
 
@@ -14645,7 +14645,8 @@ body {
   margin-left: auto;
 }
 
-.wrapper .page-header, .wrapper .page-footer {
+.wrapper .page-header,
+.wrapper .page-footer {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.5);
   color: black;
@@ -14681,8 +14682,8 @@ body {
 }
 
 .post-logo {
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .post-logo .post-img {
@@ -14708,8 +14709,23 @@ body {
   padding-right: 15px;
   padding-left: 15px;
   display: flex;
-  justify-content: space-around;
+  flex-flow: column wrap;
+}
+
+.posts .post .post-title {
+  flex: 0 1 10%;
+  border-bottom: 1px solid blue;
+}
+
+.posts .post .post-info {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.posts .post .post-info .post-img,
+.posts .post .post-info .list-brassin_item {
+  flex: 0 1 50%;
 }
 
 @media (min-width: 576px) {
@@ -14717,19 +14733,11 @@ body {
     flex: 0 0 100%;
     max-width: 100%;
   }
-  .posts .post .post-titre {
-    align-self: stretch;
-  }
-  .posts .post .post-info {
-    flex: 1 2 100%;
-    align-self: stretch;
-    background-color: rgba(255, 168, 102, 0.8);
-  }
 }
 
 @media (min-width: 992px) {
   .posts .post {
-    flex: 0 0 83.33333%;
-    max-width: 83.33333%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }

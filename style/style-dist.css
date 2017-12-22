@@ -14572,7 +14572,7 @@ html {
           justify-content: flex-end !important;
 }
 
-.justify-content-center, .posts .post {
+.justify-content-center {
   -webkit-box-pack: center !important;
       -ms-flex-pack: center !important;
           justify-content: center !important;
@@ -15247,7 +15247,8 @@ body {
   margin-left: auto;
 }
 
-.wrapper .page-header, .wrapper .page-footer {
+.wrapper .page-header,
+.wrapper .page-footer {
   width: 100%;
   background-color: rgba(255, 255, 255, .5);
   color: black;
@@ -15283,8 +15284,8 @@ body {
 }
 
 .post-logo {
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .post-logo .post-img {
@@ -15315,11 +15316,36 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+.posts .post .post-title {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 10%;
+          flex: 0 1 10%;
+  border-bottom: 1px solid blue;
+}
+
+.posts .post .post-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.posts .post .post-info .post-img,
+.posts .post .post-info .list-brassin_item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
 }
 
 @media (min-width: 576px) {
@@ -15329,25 +15355,13 @@ body {
             flex: 0 0 100%;
     max-width: 100%;
   }
-  .posts .post .post-titre {
-    -ms-flex-item-align: stretch;
-        align-self: stretch;
-  }
-  .posts .post .post-info {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 2 100%;
-            flex: 1 2 100%;
-    -ms-flex-item-align: stretch;
-        align-self: stretch;
-    background-color: rgba(255, 168, 102, .8);
-  }
 }
 
 @media (min-width: 992px) {
   .posts .post {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 83.33333%;
-            flex: 0 0 83.33333%;
-    max-width: 83.33333%;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
   }
 }

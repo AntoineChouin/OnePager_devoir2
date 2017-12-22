@@ -12,40 +12,42 @@
 <body>
 
     <div class="wrapper">
-        <header class="page-header">
+        <header class="page-header posts">
             <h1>This is the main Header</h1>
         </header>
 
         <main id="app" class="posts">
-            <section v-for=" biere in bieres" class="col post">
-                <header class="name beerinfo">
-                    <h1>{{ biere.nom }}</h1>
-                </header>
-                <article class="post-histoire post-origine">
-                    <p>{{ biere.histoire}}</p>
+            <div class="posts-row">
+                <section v-for=" biere in bieres" class="col post">
+                    <header class="post-title">
+                        <h1>{{ biere.nom }}</h1>
+                        <p class="post-histoire">{{ biere.histoire}}</p>
+                    </header>
 
-                </article>
 
-                <section class="post-liste list-brassin">
-                    <div class="list-brassin_item">
-                        <h4>Style</h4>
-                        <p> {{ biere.style }} </p>
-                    </div>
-                    <div class="list-brassin_item">
-                        <h4>ABV</h4>
-                        <p>{{ biere.abv }}</p>
-                    </div>
-                    <div class="list-brassin_item">
-                        <h4>Saveur</h4>{{ biere.saveur }}</div>
-                    <div class="list-brassin_item">
-                        <h4>Contenant</h4>
-                        <p>{{ biere.contenant }}</p>
-                    </div>
+                    <section class="post-info list-brassin">
+                        <div class="list-brassin_item">
+                            <h4>Style</h4>
+                            <p> {{ biere.style }} </p>
+                        </div>
+                        <div class="list-brassin_item">
+                            <h4>ABV</h4>
+                            <p>{{ biere.abv }}</p>
+                        </div>
+                        <div class="list-brassin_item">
+                            <h4>Saveur</h4>{{ biere.saveur }}</div>
+                        <div class="list-brassin_item">
+                            <h4>Contenant</h4>
+                            <p>{{ biere.contenant }}</p>
+                        </div>
+
+                        <aside class="post-img post-logo">
+                            <img src="holder.js/100px200?random=yes" alt="">
+                        </aside>
+                    </section>
+
                 </section>
-                <aside class="post-img post-logo">
-                    <img src="holder.js/100px100p?random=yes" alt="">
-                </aside>
-            </section>
+            </div>
         </main>
         <footer class="page-footer">
             <h1>This is my feats, up your dusty brain </h1>

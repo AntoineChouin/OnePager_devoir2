@@ -10,193 +10,67 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-gallery">Gallery item</div>
-            <div class="col-gallery">Gallery item</div>
-            <div class="col-gallery">Gallery item</div>
-            <div class="col-gallery">Gallery item</div>
-            <div class="col-gallery">Gallery item</div>
-            <div class="col-gallery">Gallery item</div>
+
+    <div class="wrapper ">
+        <div class="microbrasserie">
+            <header class="entitre page-header ">
+                <h2 class="microbrasserie_titre">Microbrasserie du Saint-Barbu</h2>
+                <p> Cette Microbrasserie a commencé par un simple goût de bien boire, de partager une histoire, un conte, une
+                    aventure.
+                </p>
+                <p> Ce brassin unique sera en rotation pendant l’année pour vous aider à mieux célébrer. </p>
+                <p> Cette épopée brassicole rendra hommage à ma Grand-Maman. Une grande dame adorant les bières, sans discrimination
+                    ou presque.
+                </p>
+                <p> Vous dites :
+                    <i> «bière allemande »?</i> À un endroit particulier unique dans le temps, chaque brassin vous y amènera.
+                    Sans jamais se fatiguer, ses bières se veulent une tentative humble à vous partager les histoires, les
+                    aventures d’une Oma. « À votre santé! Na dann prost! »</p>
+                <p class="micro-historique"> Cette Microbrasseire a commencé par un simple goût du partage et d'amour. </p>
+                <p class="micro-historique">La Grand-Mère, au Chalet, nous racontait des histories de ses voyages sur le Vieux-Continent. Sans jamais
+                    se fatiguer, ses contes ne se sont jamais fatigués. Jamais deux histoires pareil, il n'y a eu. </p>
+                <p class="micro-historique">Corrupti odio voluptate minus ullam possimus assumenda a at repellat atque recusandae, nesciunt quo cum deleniti
+                    fuga velit dolorum iusto voluptas veniam animi! Neque, ratione ipsam ullam dicta cum architecto.</p>
+            </header>
         </div>
+        <main id="app" class="posts">
+            <article class="posts-row">
+                <section v-for=" biere in bieres" class=" post post-1 post-biere ">
+                    <header class="post-titre biere-info">
+                        <h1>{{ biere.nom }}</h1>
+                        <p class="post-citation ">{{ biere.histoire}}</p>
+                    </header>
+                    <article class="post-info biereinfo list-brassin">
+                        <section class="post-liste list-brassin">
+                            <div class="list-brassin_item">
+                                <h4>Style</h4>
+                                <p> {{ biere.style }} </p>
+                            </div>
+                            <div class="list-brassin_item">
+                                <h4>ABV</h4>
+                                <p>{{ biere.abv }}</p>
+                            </div>
+                            <div class="list-brassin_item">
+                                <h4>Saveur</h4>{{ biere.saveur }}</div>
+                            <div class="list-brassin_item">
+                                <h4>Contenant</h4>
+                                <p>{{ biere.contenant }}</p>
+                            </div>
+                        </section>
+                        <aside class="post-logo">
+                            <img class="post-img " src="holder.js/100px250?random=yes" alt="THis is sime"> </aside>
+                    </article>
+                </section>
+
+            </article>
+        </main>
+
     </div>
-    <main class="container">
-        <div class="row">
-            <section class="post box bourbon" id="bourbon">
-                <header>
-                    <h2 class="item">this is my Bourbon</h2>
-                </header>
-                <article>
-                    <h3 class="item">this is an Article</h3>
-                    <div class="list list-whiskey">
-                        <h4>Lorem, ipsum.</h4>
-                        <p>Lorem ipsum dolor sit.</p>
-                    </div>
-                    <div class="list list-whiskey">
-                        <h4>Deleniti, itaque.</h4>
-                        <p>Magni molestias natus iusto?</p>
-                    </div>
-                    <div class="list list-whiskey">
-                        <h4>Minima, sint.</h4>
-                        <p>Soluta reprehenderit qui quas?</p>
-                    </div>
-                    <div class="list list-whiskey">
-                        <h4>Sapiente, harum?</h4>
-                        <p>Quibusdam cumque praesentium consectetur.</p>
-                    </div>
-                    <div class="list list-whiskey">
-                        <h4>Optio, dolore.</h4>
-                        <p>Voluptatibus, maiores! Reprehenderit, distinctio!</p>
-                    </div>
-                </article>
-                <aside class="post-image whiskey-bottle">
-                    <h3 class="item">this is an Aside</h3>
-
-                    <img src="http://www.jimbeam.com/sites/default/files/jb_media_product_original/JB_Original_750ml_2.png?w=600&crc=e0f1537c"
-                        alt="">
-                </aside>
-                <footer>
-                    <h3>This is my foot right up yours</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, odio?</p>
-                    <p>Maiores quam debitis aut deleniti? Nesciunt sed repellat tempore dolore.</p>
-                    <p>Quidem pariatur similique deserunt doloremque quo temporibus est. Facilis, saepe?</p>
-                </footer>
-            </section>
-            <section class="post box scotch">
-                <header class="post-header">
-                    <h2 class="item">this is my Scotch-Tape</h2>
-                    <p>Scotch-tape Ville</p>
-                </header>
-                <article class="post-descriptif">
-                    <h3 class="item">this is an Article</h3>
-                    <div class="item-list list-whiskey">
-                        <h4>Lorem, ipsum.</h4>
-                        <p>Lorem ipsum dolor sit.</p>
-                    </div>
-                    <div class="item-list list-whiskey">
-                        <h4>Deleniti, itaque.</h4>
-                        <p>Magni molestias natus iusto?</p>
-                    </div>
-                    <div class="list-item list-whiskey">
-                        <h4>Minima, sint.</h4>
-                        <p>Soluta reprehenderit qui quas?</p>
-                    </div>
-                    <div class="list-item list-whiskey">
-                        <h4>Sapiente, harum?</h4>
-                        <p>Quibusdam cumque praesentium consectetur.</p>
-                    </div>
-                    <div class="list-item list-whiskey">
-                        <h4>Optio, dolore.</h4>
-                        <p>Voluptatibus, maiores! Reprehenderit, distinctio!</p>
-                    </div>
-                </article>
-                <aside>
-                    <h3 class="item">this is an Aside</h3>
-                    <img src="https://www.thewhiskyexchange.com/components/feature/engraving/assets/application/themes/glenlivet18/bottom-bottle.png"
-                        alt="">
-                </aside>
-                <footer>
-                    <h3>This is my foot right up yours</h3>
-                    <p>Ea debitis facilis in soluta placeat quis vero, praesentium rerum.</p>
-                    <p>Consectetur impedit fugiat dicta reiciendis totam dolorem laborum rerum ipsa.</p>
-                    <p>Optio nihil rerum explicabo magni, molestiae porro adipisci iusto tempora!</p>
-                </footer>
-            </section>
-            <section class="post box">
-                <header>
-                    <h2 class="item">this is ma head</h2>
-                </header>
-                <article>
-                    <h3 class="item">this is an Article</h3>
-                    <p>Earum ea neque ipsam laudantium amet recusandae dicta dignissimos error.</p>
-                    <p>Molestias amet repellendus consequuntur ducimus sint pariatur mollitia, voluptas nesciunt.</p>
-                    <p>Voluptas quibusdam reiciendis molestiae doloremque quia enim harum quas maiores?</p>
-                    <p>Incidunt atque, ipsum nobis harum provident quis voluptas sapiente maiores.</p>
-                </article>
-                <aside>
-                    <h3 class="item">this is an Aside</h3>
-                    <p>Aliquid est, esse quo beatae odio itaque ipsa quasi autem quam.</p>
-                </aside>
-                <footer>
-                    <h3>This is my foot right up yours</h3>
-                    <p>Inventore beatae ipsum ut, dolorem excepturi rem. Ut, aut velit!</p>
-                    <p>Vitae deleniti hic dolore quidem eligendi temporibus architecto quam perferendis.</p>
-                    <p>Tempora itaque, amet porro ut explicabo nobis. Ipsam, rem ipsum.</p>
-                </footer>
-            </section>
-            <section class="post box">
-                <header>
-                    <h2 class="item">this is ma head</h2>
-                </header>
-                <article>
-                    <h3 class="item">this is an Article</h3>
-                    <p>Delectus ratione nisi possimus. Magni dolore tempora optio obcaecati accusamus?</p>
-                    <p>Ab at provident suscipit possimus ipsam distinctio perspiciatis, reiciendis libero!</p>
-                    <p>Deleniti eveniet, doloremque culpa quam iste minus reprehenderit vitae iusto.</p>
-                    <p>Temporibus cum suscipit distinctio, quaerat nobis doloribus. Repudiandae, quod fugit!</p>
-                </article>
-                <aside>
-                    <h3 class="item">this is an Aside</h3>
-                    <p>Soluta excepturi ipsam animi nulla ut aliquid officia maxime ab architecto?</p>
-                </aside>
-                <footer>
-                    <h3>This is my foot right up yours</h3>
-                    <p>Ad eligendi quisquam voluptate velit adipisci ut maiores ipsam recusandae.</p>
-                    <p>Labore modi ducimus ex libero qui voluptatem natus culpa molestias!</p>
-                    <p>Tempora numquam soluta quo dolores atque minus perferendis accusantium ut!</p>
-                </footer>
-            </section>
-            <section class="post box">
-                <header>
-                    <h2 class="item">this is ma head</h2>
-                </header>
-                <article>
-                    <h3 class="item">this is an Article</h3>
-                    <p>Nulla culpa corrupti, et quas tenetur quia fuga rerum perspiciatis!</p>
-                    <p>Eveniet temporibus perspiciatis sapiente atque molestias laboriosam nemo ut vel?</p>
-                    <p>Minus cumque dolorum architecto voluptates distinctio exercitationem placeat quibusdam quae!</p>
-                    <p>Recusandae in natus perferendis expedita iusto a adipisci doloribus beatae.</p>
-                </article>
-                <aside>
-                    <h3 class="item">this is an Aside</h3>
-                    <p>Fugiat quae perspiciatis similique ipsam alias quas repellat optio aliquam? Nemo?</p>
-                </aside>
-                <footer>
-                    <h3>This is my foot right up yours</h3>
-                    <p>Velit unde neque aliquam debitis, ducimus corporis sed sit odit.</p>
-                    <p>Omnis deserunt aperiam maiores earum mollitia, consequuntur non itaque sequi.</p>
-                    <p>At beatae cum quaerat ratione minus consectetur tempore mollitia provident.</p>
-                </footer>
-            </section>
-            <section class="post box">
-                <header>
-                    <h2 class="item">this is ma head</h2>
-                </header>
-                <article>
-                    <h3 class="item">this is an Article</h3>
-                    <p>Officia quibusdam minus fugiat. Quos nobis error asperiores esse itaque.</p>
-                    <p>Suscipit aut veniam laudantium qui voluptate delectus perferendis voluptatem ducimus!</p>
-                    <p>Error itaque accusamus fugiat esse aut voluptatum id rerum sint.</p>
-                    <p>Qui molestiae saepe consequuntur provident, architecto iste asperiores molestias corrupti!</p>
-                </article>
-                <aside>
-                    <h3 class="item">this is an Aside</h3>
-                    <p>Voluptatem animi ratione facilis incidunt ad labore doloribus sint optio nobis!</p>
-                </aside>
-                <footer>
-                    <h3>This is my foot right up yours</h3>
-                    <p>Non, aspernatur. Ab hic voluptates magnam aperiam exercitationem quibusdam a?</p>
-                    <p>At omnis magni saepe eius consequuntur esse, voluptas minus reiciendis?</p>
-                    <p>Nobis nemo fuga qui aliquam consequuntur labore earum placeat est.</p>
-                </footer>
-            </section>
-
-        </div>
-
-    </main>
 
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.9/vue.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.js'></script>
     <script src="js/main.js"></script>
 </body>
 

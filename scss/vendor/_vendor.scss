@@ -1,4 +1,12 @@
 @import "sanitize/_sanitize.scss";
 @import "normalize/_normalize";
-@import "../../node_modules/animate.css/animate.min";
+
+//animate
+
+@import "../../node_modules/animate.scss/vendor/assets/stylesheets/animate.scss";
+@import "../../node_modules/animate.scss/vendor/assets/stylesheets/animate/fadeIn";
+@import "../../node_modules/animate.scss/vendor/assets/stylesheets/animate/flash";
+@import "../../node_modules/animate.scss/vendor/assets/stylesheets/animate/hinge";
+@import "../../node_modules/animate.scss/vendor/assets/stylesheets/animate/bounce";
+@import "../../node_modules/animate.scss/vendor/assets/stylesheets/animate/lightSpeedIn";
 @import "../scss/vendor/font-awesome/scss/font-awesome";

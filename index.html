@@ -5,26 +5,47 @@
     <title>Travail</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.css"> -->
+
     <link href="style/style-dist.css" rel="stylesheet">
 </head>
 
 <body>
 
     <div class="wrapper">
-        <header class="page-header posts">
-            <h1>This is the main Header</h1>
+        <header class="page-header posts-header">
+            <!-- <section class="posts-row">
+                <article class="post">
+                    <h1>Microbrasserie du Barbu</h1>
+                    <p> Cette Microbrasserie a commencé par un simple goût de bien boire, de partager une histoire, un conte,
+                        une aventure.</p>
+                    <p> Ce brassin unique sera en rotation pendant l’année pour vous aider à mieux célébrer. Cette épopée brassicole
+                        rendra hommage à ma Grand-Maman.
+                        <p> Une grande dame adorant les bières, sans discrimination ou presque. Vous dites : «bière allemande
+                            »?
+                        </p>
+                        <p> À un endroit particulier unique dans le temps, chaque brassin vous y amènera. Sans jamais se fatiguer,
+                            ses bières se veulent une tentative humble à vous partager les histoires, les aventures d’une
+                            Oma.
+                        </p>
+
+                </article>
+
+
+            </section> -->
+
         </header>
 
         <main id="app" class="posts">
             <div class="posts-row">
-                <section v-for=" biere in bieres" class="col post">
+                <section v-for=" biere in bieres" class="col post ">
+                    <article v-bind:class="[biere.class]">
+                        
                     <header class="post-title">
                         <h1>{{ biere.nom }}</h1>
                         <p class="post-histoire">{{ biere.histoire}}</p>
                     </header>
-
-
+                    
+                    
                     <section class="post-info ">
                         <div class="list-brassin">
                             <div class="list-brassin_item">
@@ -36,24 +57,38 @@
                                 <p>{{ biere.abv }}</p>
                             </div>
                             <div class="list-brassin_item">
-                                <h4>Saveur</h4>{{ biere.saveur }}</div>
+                                <h4>Amertume </h4>
+                                <p>{{ biere.ibu }}
+                                    <span>(IBU)</span>
+                                </p>
+                            </div>
+                            <div class="list-brassin_item">
+                                <h4>Saveur</h4>
+                                <p> {{ biere.saveur }}</p>
+                            </div>
                             <div class="list-brassin_item">
                                 <h4>Contenant</h4>
-                                <p>{{ biere.contenant }}</p>
+                                <p>{{ biere.format }}</p>
+                            </div>
+                            <div class="list-brassin_item">
+                                <h4>Maturité</h4>
+                                <p>{{ biere.maturite }}</p>
                             </div>
                         </div>
-
+                    
                         <aside class=" post-logo">
-                            <img class="post-logo_img" src="holder.js/100px100p?random=yes" alt="">
+                            <img class="post-logo_img"
+                                src="/image/Panther_Paw.svg.png"
+                                alt="">
                         </aside>
                     </section>
+                    </article>
+                    
 
                 </section>
             </div>
         </main>
-        <footer class="page-footer">
-            <h1>This is my feats, up your dusty brain </h1>
-        </footer>
+      
     </div>
 
 

@@ -14625,8 +14625,6 @@ html {
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: content-box;
-  overflow: scroll;
 }
 
 html,
@@ -14639,7 +14637,6 @@ body {
 .wrapper {
   max-width: 100vw;
   max-height: 100vh;
-  width: 75rem;
   margin: 0 auto;
   width: 100%;
   padding-right: 15px;
@@ -14648,18 +14645,15 @@ body {
   margin-left: auto;
 }
 
-.wrapper .microbrasserie,
-.wrapper .posts {
-  color: black;
-}
-
-.wrapper .entitre {
-  background-color: lightgreen;
-}
-
-#app .page-header {
+.wrapper .page-header, .wrapper .page-footer {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
   color: black;
   font-family: 'Shrikhand', cursive;
+}
+
+#app .post {
+  margin: 1em auto;
 }
 
 #app .post:nth-child(5n + 1) {
@@ -14705,7 +14699,6 @@ body {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
-  display: flex;
 }
 
 .posts .post {

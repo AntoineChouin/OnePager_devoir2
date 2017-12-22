@@ -11,60 +11,45 @@
 
 <body>
 
-    <div class="wrapper ">
-        <div class="microbrasserie">
-            <header class="entitre page-header ">
-                <h2 class="microbrasserie_titre">Microbrasserie du Saint-Barbu</h2>
-                <p> Cette Microbrasserie a commencé par un simple goût de bien boire, de partager une histoire, un conte, une
-                    aventure.
-                </p>
-                <p> Ce brassin unique sera en rotation pendant l’année pour vous aider à mieux célébrer. </p>
-                <p> Cette épopée brassicole rendra hommage à ma Grand-Maman. Une grande dame adorant les bières, sans discrimination
-                    ou presque.
-                </p>
-                <p> Vous dites :
-                    <i> «bière allemande »?</i> À un endroit particulier unique dans le temps, chaque brassin vous y amènera.
-                    Sans jamais se fatiguer, ses bières se veulent une tentative humble à vous partager les histoires, les
-                    aventures d’une Oma. « À votre santé! Na dann prost! »</p>
-                <p class="micro-historique"> Cette Microbrasseire a commencé par un simple goût du partage et d'amour. </p>
-                <p class="micro-historique">La Grand-Mère, au Chalet, nous racontait des histories de ses voyages sur le Vieux-Continent. Sans jamais
-                    se fatiguer, ses contes ne se sont jamais fatigués. Jamais deux histoires pareil, il n'y a eu. </p>
-                <p class="micro-historique">Corrupti odio voluptate minus ullam possimus assumenda a at repellat atque recusandae, nesciunt quo cum deleniti
-                    fuga velit dolorum iusto voluptas veniam animi! Neque, ratione ipsam ullam dicta cum architecto.</p>
-            </header>
-        </div>
+    <div class="wrapper">
+        <header class="page-header">
+            <h1>This is the main Header</h1>
+        </header>
+
         <main id="app" class="posts">
-            <article class="posts-row">
-                <section v-for=" biere in bieres" class=" post post-1 post-biere ">
-                    <header class="post-titre biere-info">
-                        <h1>{{ biere.nom }}</h1>
-                        <p class="post-citation ">{{ biere.histoire}}</p>
-                    </header>
-                    <article class="post-info biereinfo list-brassin">
-                        <section class="post-liste list-brassin">
-                            <div class="list-brassin_item">
-                                <h4>Style</h4>
-                                <p> {{ biere.style }} </p>
-                            </div>
-                            <div class="list-brassin_item">
-                                <h4>ABV</h4>
-                                <p>{{ biere.abv }}</p>
-                            </div>
-                            <div class="list-brassin_item">
-                                <h4>Saveur</h4>{{ biere.saveur }}</div>
-                            <div class="list-brassin_item">
-                                <h4>Contenant</h4>
-                                <p>{{ biere.contenant }}</p>
-                            </div>
-                        </section>
-                        <aside class="post-logo">
-                            <img class="post-img " src="holder.js/100px250?random=yes" alt="THis is sime"> </aside>
-                    </article>
+            <section v-for=" biere in bieres" class="col post">
+                <header class="name beerinfo">
+                    <h1>{{ biere.nom }}</h1>
+                </header>
+                <article class="post-histoire post-origine">
+                    <p>{{ biere.histoire}}</p>
+
+                </article>
+
+                <section class="post-liste list-brassin">
+                    <div class="list-brassin_item">
+                        <h4>Style</h4>
+                        <p> {{ biere.style }} </p>
+                    </div>
+                    <div class="list-brassin_item">
+                        <h4>ABV</h4>
+                        <p>{{ biere.abv }}</p>
+                    </div>
+                    <div class="list-brassin_item">
+                        <h4>Saveur</h4>{{ biere.saveur }}</div>
+                    <div class="list-brassin_item">
+                        <h4>Contenant</h4>
+                        <p>{{ biere.contenant }}</p>
+                    </div>
                 </section>
-
-            </article>
+                <aside class="post-img post-logo">
+                    <img src="holder.js/100px100p?random=yes" alt="">
+                </aside>
+            </section>
         </main>
-
+        <footer class="page-footer">
+            <h1>This is my feats, up your dusty brain </h1>
+        </footer>
     </div>
 
 

@@ -4,6 +4,7 @@
 @import "vendor/vendor";
 @import "vendor/normalize/_normalize";
 @import "vendor/vendor";
+@import "variables";
 @import "mixin";
 @import "../node_modules/bootstrap/scss/bootstrap-grid";
 * {
@@ -13,24 +14,13 @@
 }
 
 %flexpost {
-    width: 50%;
-    height: 100%;
+    // width: 50%;
+    // height: 100%;
     flex: 1 2;
     align-self: center;
 }
 
-$colors:#e60926,
-#2bacf7,
-#f72b46,
-#2bf776,
-#2b46f7;
-@mixin bckg() {
-    @for $i from 1 through length($colors) {
-        &:nth-child(#{length($colors)}n + #{$i}) {
-            background: transparentize(nth($colors, $i), 0.5);
-        }
-    }
-}
+
 
 $lightgreen: lightseagreen;
 $lightblue:#aa33aa;
@@ -54,30 +44,10 @@ $wiskey1: "http://www.owensliquors.com/userfiles/Image/background.jpg";
     /* color */
 }
 
-@mixin backColor ($colorBkg) {
-    article {
-        background-color: transparentize( mix($colorBkg, orangered), 0.25);
-    }
-    header {
-        background-color: transparentize( mix($colorBkg, limegreen), 0.25);
-    }
-    section {
-        background-color: transparentize(complement(lighten($colorBkg, 20%)), 0.25);
-    }
-    footer {
-        background-color: transparentize(complement($colorBkg), 0.25);
-    }
-    >div {
-        background-color: transparentize(saturate($color: $colorBkg, $amount: 25%), 0.25)
-    }
-    aside {
-        background-color: darken(transparentize($colorBkg, 0.2), 20%);
-    }
-}
+
 
 html,
 body {
-    // max-width: calc(100vw - 1vw);
     max-height: 100vh;
     max-width: 100vw;
     @include backImage($wiskey1);
@@ -95,17 +65,20 @@ body {
         color: black;
         font-family: 'Shrikhand', cursive;
     }
-    .page-footer{
-        h1{
+    .page-footer {
+        h1 {
             @include make-col-ready();
-            @include media-breakpoint-up(sm){
-                 @include make-col(12);
+            @include media-breakpoint-up(sm) {
+                @include make-col(12);
             }
         }
     }
     #app {
         .post {
-            margin: 1em auto;
+            width: 100vw;
+            height: 100vh;
+            margin: 5vh auto;
+            color: black;
             @include bckg();
             @extend .animated;
             &:last-child {
@@ -115,7 +88,7 @@ body {
     }
 }
 
-aside {
+.post-logo {
     max-width: 100%;
     max-height: 100%;
     img {
@@ -125,29 +98,33 @@ aside {
     }
 }
 
-.schwarzbier{
+.schwarzbier {
     color: palevioletred;
-     @include animate(bounce, 0.5s);
+    @include animate(bounce, 1.5s);
 }
-.berliner{
 
+.berliner {
+    @include animate(flash, 4s);
 }
-    .altbier {
 
+.altbier {
+    @include animate(swing, 4s);
 }
-.dunkel{
 
+.dunkel {
+    @include animate(fadeIn, 2s);
 }
-.weizenbock{
-    
+
+.weizenbock {
+    @include animate(lightSpeedIn, 2s);
 }
+
 .posts {
     max-height: 100vh;
     max-width: 100vw;
     &-header {
         @include make-row();
     }
-    
     &-footer {
         @include make-row();
     }
@@ -173,8 +150,8 @@ aside {
             @extend %flexpost;
             background-color: blanchedalmond;
             img {
-                width: 100%;
-                height: 100%;
+                max-width: 100%;
+                max-height: 100%;
             }
         }
         .list-brassin {
@@ -190,19 +167,11 @@ aside {
         }
         @include media-breakpoint-up(sm) {
             @include make-col(12);
-            width: 100%;
-            // @include animate(bounce, 0.5s);
+            width: 100%; // @include animate(bounce, 0.5s);
             .post-info {
                 flex-flow: wrap column;
                 &:nth-child(odd) {
-                    flex-flow: wrap row-reverse; // .post-logo {
-                    //     order: 1;
-                    //     align-self: flex-end;
-                    // }
-                    // .list-brassin {
-                    //     order: 2;
-                    //       align-self: flex-start;
-                    // }
+                    flex-flow: wrap row-reverse;
                 }
                 &:nth-child(even) {
                     flex-flow: wrap row-reverse;
